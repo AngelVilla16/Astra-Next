@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%; 
+    margin: 0;
+}
+
+body {
+    background: url('../assets/mesh-gradient.svg');   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 1.5rem;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+    text-align: center; 
+}
+
+.title {
+    color: whitesmoke;
+    font-size: 36px; 
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    color: whitesmoke;
+    font-size: 16px; 
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    line-height: 1.5;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-form {
+    padding: 2rem 1.5rem; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 16px;
+    background: rgba(4, 28, 1, 0.82); 
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    color: whitesmoke;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    color: #e5e7eb;
+}
+
+.login-form label {
+    align-self: flex-start;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+
+Input[type='email'], Input[type='password'], Input[type='text'] {
+    margin: 0.5rem 0 1.2rem 0;
+    padding: 0.6rem 0.8rem;
+    width: 100%; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    color: whitesmoke;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+Input:focus {
+    border-color: #4ade80; 
+}
+
+.showpassdiv {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0.5rem 0 1.5rem 0;
+    color: #cbd5e1;
+}
+
+Input[type='checkbox'] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+Button {
+    margin: 0.5rem 0 1rem 0;
+    width: 100%; 
+    padding: 0.75rem;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: #4ade80; 
+    color: #041c01;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+Button:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+}
+
+.enlace {
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+}
+
+.enlace:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2rem;
+    }
+
+    .left {
+        text-align: left; 
+    }
+
+    .title {
+        font-size: 52px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+    
+    .login-form {
+        padding: 2.5rem 2rem; 
+    }
+}
