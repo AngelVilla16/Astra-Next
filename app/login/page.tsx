@@ -3,12 +3,12 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Link from 'next/link';
 import {useState} from 'react';
-
+import { useRouter } from 'next/navigation';
 import '../styles/login.css';
 
 
-export default function Login(){
-
+export default function Login(){    
+    const router = useRouter();
     const [showpass, setShowPass] = useState<boolean>(false);
     const[correo, setCorreo] = useState<string>("");
     const [contraseña, setContraseña] = useState<string>("");
@@ -17,7 +17,7 @@ export default function Login(){
 
    
     const res = await fetch("/api/login", {
-        method: "POST", // <--- Cambiado a POST
+        method: "POST", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ correo, contraseña })
     });
@@ -26,6 +26,8 @@ export default function Login(){
 
     if (res.ok) {
         alert("¡Bienvenido de nuevo a Astra!");
+        router.push("/dashboard");
+        
         
     } else {
         alert(datos.mensaje); 
