@@ -22,7 +22,7 @@ export async function POST(request: Request) {
         
         // Extraemos el primer registro encontrado
         const datosUsuario = response[0];
-
+        
         // Validar contraseña
         const correctPassword = await bcrypt.compare(contraseña, datosUsuario.password);
         
@@ -34,6 +34,7 @@ export async function POST(request: Request) {
         const payload = { 
             id: datosUsuario.id_usuario, 
             nombre: datosUsuario.nombre,
+            apellido: datosUsuario.apellido,
             correo: datosUsuario.correo 
         };
         

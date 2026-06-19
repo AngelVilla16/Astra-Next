@@ -25,7 +25,7 @@ export default function Login(){
     const datos = await res.json();
 
     if (res.ok) {
-        alert("¡Bienvenido de nuevo a Astra!");
+       
         router.push("/dashboard");
         
         
