@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import Button from './Button';
-export default function Navbar(){
+interface navProps{
+    className?:string
+}
+export default function Navbar({className}: navProps){
     return(
-        <nav>
+        <nav className={className}>
             <div className="astralogo"> <img src="" alt="" /></div>
           <ul>
             <li><Link href="/dashboard/pacientes"> Pacientes</Link></li>
