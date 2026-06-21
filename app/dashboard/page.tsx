@@ -3,10 +3,11 @@ import '../styles/dashboard.css';
 import {useState, useEffect} from 'react';
 import Navbar from '../../components/Navbar';
 import Link from 'next/link';
-
+import Button from '../../components/Button';
+import Modal from '../../components/Modal';
 
 export default function Dashboard(){
-
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const [nombre, setNombre] = useState<string>("");
     const [apellido, setApellido] = useState<string>("");
 
@@ -21,7 +22,7 @@ export default function Dashboard(){
                 if (data.nombre){
                     setNombre(data.nombre)
                     setApellido(data.apellido)
-                    console.log(data)
+                   
                 }
             });
     },[]);
@@ -61,13 +62,18 @@ export default function Dashboard(){
                     </tbody>
                 </table>
                 <div className="options">
-                    <Link className='enlace' href="">Registrar Paciente</Link>
+                    <Button className='btn' type='button' text='Registrar Paciente' onClick={()=>setIsOpen(true)}/>
                     <Link className='enlace' href="">Eliminar Paciente</Link>
                     <Link  className='enlace' href="">Modificar datos del paciente</Link>
                     <Link className='enlace' href="">Agendar Cita</Link>
                     <Link className='enlace' href="">Reagendar Cita</Link>
                     <Link className='enlace'  href="">Cancelar Cita</Link>
                 </div>
+                <Modal isOpen={isOpen} onClose={()=>setIsOpen(false)}>
+                    <form action="">
+                        <label htmlFor="nombre"> Nombre del paciente:</label>
+                    </form>
+                </Modal>
             </div>
            
         </>

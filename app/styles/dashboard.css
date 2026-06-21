@@ -151,3 +151,14 @@ tr:hover td {
 .enlace:hover{
     color: #10b981;
 }
+.btn{
+    color:white;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn:hover{
+    color: #10b981;
+}
