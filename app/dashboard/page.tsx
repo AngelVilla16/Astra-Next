@@ -31,45 +31,44 @@ export default function Dashboard(){
     return(
 
         <>
-           
-                <div className="header">
-                <h1 className='title'>Bienvenido a astra! Doctor(a): {nombre}  {apellido}</h1>
-                <Navbar className='navigation'></Navbar>
-                
+            <div className="header">
+                <h1 className='title'> Bienvenido a Astra</h1>
+                <div className="navigation">
+                    <Navbar />
                 </div>
-                <div className='main'>
-                    <div className="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Id </th>
-                                    <th> Nombre </th>
-                                    <th>Apellido</th>
-                                    <th>Edad</th>
-                                    <th>Altura</th>
-                                    <th>Peso</th>
-                                    <th>Alergia</th>
-                                    <th>Padecimientos</th>
-                                    <th>Proxima cita</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div className="options">
-                        <Link className='enlace' href='/agregar'> Registrar Paciente</Link>
-                        <Link className='enlace' href='/eliminar'> Eliminar Paciente</Link>
-                        <Link className='enlace' href='/modificarPaciente'>Modificar Datos del Paciente</Link>
-                        <Link className='enlace' href='/agendar'> Agendar Cita</Link>
-                        <Link className='enlace' href='/eliminarCita'>Eliminar Cita</Link>
-                        <Link className='enlace' href='/reagendar'>Reagendar Cita</Link>
-                </div>
-
-                    
+                <p>Doctor(a): {nombre} {apellido}</p>
             </div>
-            
+            <div className="main">
+                <table className='dgv-pacientes'>
+                    <thead>
+                      <th>Id</th>
+                      <th>Nombre </th>
+                      <th>Apellido </th>
+                      <th>Edad</th>
+                      <th>Altura</th>
+                      <th>Peso</th>
+                      <th>Alergias</th>
+                      <th>Padecimientos</th>
+                      <th>Proxima Cita</th>
+                    </thead>
+                    <tbody>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            hola
+                        </td>
+                    </tbody>
+                </table>
+                <div className="options">
+                    <Link className='enlace' href="">Registrar Paciente</Link>
+                    <Link className='enlace' href="">Eliminar Paciente</Link>
+                    <Link  className='enlace' href="">Modificar datos del paciente</Link>
+                    <Link className='enlace' href="">Agendar Cita</Link>
+                    <Link className='enlace' href="">Reagendar Cita</Link>
+                    <Link className='enlace'  href="">Cancelar Cita</Link>
+                </div>
+            </div>
            
         </>
     );

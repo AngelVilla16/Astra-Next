@@ -1,0 +1,64 @@
+/* CONTENEDOR PRINCIPAL DE LA NAVBAR */
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* LISTA DE ENLACES (Pacientes, Citas, Agenda) */
+.header nav ul {
+    display: flex;
+    flex-direction: row; /* Fuerza la alineación horizontal */
+    list-style: none;
+    align-items: center;
+    gap: 24px; /* Separación uniforme entre cada link */
+    margin: 0;
+    padding: 0;
+}
+
+/* ESTILOS DE LOS ENLACES (Link de Next.js) */
+.header nav ul li a {
+    color: #94a3b8; /* Gris claro elegante apagado */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+.header nav ul li a:hover {
+    color: #10b981; /* Verde esmeralda idéntico al título del Doc. */
+    transform: translateY(-1px); /* Pequeño levante estético */
+}
+
+/* BOTÓN DE CERRAR SESIÓN */
+.header nav ul button {
+    background-color: rgba(239, 68, 68, 0.1); /* Fondo rojo translúcido muy sutil */
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #f87171; /* Texto rojo suave */
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 8px; /* Separación extra del último enlace */
+}
+
+/* Efecto hover para el botón de cerrar sesión */
+.header nav ul button:hover {
+    background-color: #ef4444; /* Rojo sólido */
+    color: #ffffff; /* Texto blanco */
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+    transform: scale(1.02);
+}
+
+/* ESPACIO PARA TU LOGO (Por si después pones la imagen) */
+.astralogo img {
+    height: 32px;
+    width: auto;
+    display: block;
+}

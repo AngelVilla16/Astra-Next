@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import '../app/styles/navbar.css';
 interface navProps{
     className?:string
 }

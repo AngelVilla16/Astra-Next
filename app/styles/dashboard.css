@@ -1,3 +1,4 @@
+/* RESET GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +10,144 @@ html, body {
     height: 100%; 
     margin: 0;
 }
-.main{
-    width: 100%;
-    height: 100%;
-    background: #474646;
-}
-.header{
 
-    background: linear-gradient(90deg, #000046,#1CB5E0)
+body {
+    background: url('../assets/mesh-gradient.svg');   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Evita que el fondo se mueva si hay scroll */
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #f8fafc;
 }
-Navbar{
+
+/* CONTENEDOR GENERAL */
+.dashboard-container {
     display: flex;
-    flex-direction:row ;
-    
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER EFECTO CRISTAL (GLASSMORPHISM) */
+.header {
+    margin: 0;
+    padding: 16px 32px;
+    background: rgba(17, 24, 39, 0.7); /* Base oscura translúcida */
+    backdrop-filter: blur(12px);       /* Desenfoque de fondo */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: row;               /* Título y Navbar lado a lado */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+}
+
+.title span {
+    color: #10b981; /* Resalta el nombre del doctor en verde */
+    font-style: normal;
+}
+
+/* DISTRIBUCIÓN PRINCIPAL (GRID) */
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3 partes tabla, 1 parte botones */
+    gap: 24px;
+    padding: 32px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* CONTENEDOR DE LA TABLA ESTILO CRISTAL OSCO */
+.table-container {
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+}
+
+.table-header-zone h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+/* LA TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.875rem;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+}
+
+th {
+    color: #10b981; /* Verde esmeralda para el encabezado */
+    font-weight: 600;
+    padding: 14px 16px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+td {
+    padding: 14px 16px;
+    color: #cbd5e1; /* Gris claro para los datos (mejor lectura) */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Ilumina la fila de un paciente al pasar el mouse */
+tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* PANEL LATERAL DE BOTONES */
+.options {
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column; /* Botones apilados uno abajo del otro */
+    gap: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+.enlace{
+    color: white;
+    text-decoration: none;
+}
+.enlace:hover{
+    color: #10b981;
 }
